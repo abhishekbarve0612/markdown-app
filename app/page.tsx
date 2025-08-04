@@ -10,6 +10,7 @@ import { defaultMarkdown } from "@/utils/constants";
 import Textarea from "@/components/textarea";
 import Preview from "@/components/markdown/Preview";
 import { ThemeToggle } from "@/components/dark-mode";
+import { Panel, PanelGroup, PanelResizeHandle } from "react-resizable-panels";
 
 export default function Home() {
   const [markdown, setMarkdown] = useState(defaultMarkdown);
@@ -79,23 +80,30 @@ export default function Home() {
             </div>
           </div>
         )}
-        <div className={`${styles.editorPane}`}>
-          <div className={styles.paneHeader}>
-            <h2 className={styles.paneTitle}>Markdown</h2>
-          </div>
-          <Textarea
-            value={markdown}
-            onChange={(e) => setMarkdown(e.target.value)}
-            className={styles.textareaEditor}
-            placeholder="Type your markdown here or drop a file..."
-          />
-        </div>
-        <div className={`${styles.previewPane}`}>
-          <div className={`${styles.paneHeader}`}>
-            <h2 className={styles.paneTitle}>Preview</h2>
-          </div>
-          <Preview markdown={markdown} />
-        </div>
+        <PanelGroup direction="horizontal" className={styles.panelGroup}>
+          <Panel
+            className={`${styles.editorPane}`}
+            defaultSize={50}
+            minSize={20}
+          >
+            <div className={styles.paneHeader}>
+              <h2 className={styles.paneTitle}>Markdown</h2>
+            </div>
+            <Textarea
+              value={markdown}
+              onChange={(e) => setMarkdown(e.target.value)}
+              className={styles.textareaEditor}
+              placeholder="Type your markdown here or drop a file..."
+            />
+          </Panel>
+          <PanelResizeHandle className={styles.resizeHandle} />
+          <Panel className={`${styles.previewPane}`}>
+            <div className={`${styles.paneHeader}`}>
+              <h2 className={styles.paneTitle}>Preview</h2>
+            </div>
+            <Preview markdown={markdown} />
+          </Panel>
+        </PanelGroup>
       </main>
     </div>
   );

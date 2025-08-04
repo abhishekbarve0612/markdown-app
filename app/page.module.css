@@ -28,13 +28,13 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 8px 16px;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--foreground);
   background-color: var(--background);
   flex-shrink: 0;
 }
 
 .headerTitle {
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: bold;
 }
 
@@ -44,22 +44,14 @@ body {
 
 .mainContent {
   position: relative;
-  display: grid;
-  grid-template-columns: 1fr;
   flex-grow: 1;
-}
-
-@media (min-width: 768px) {
-  .mainContent {
-    grid-template-columns: 1fr 1fr;
-  }
+  height: calc(100vh - 57px);
 }
 
 .editorPane {
   display: flex;
   flex-direction: column;
   height: 100%;
-  border-right: 1px solid var(--border);
 }
 
 .paneHeader {
@@ -69,14 +61,14 @@ body {
 }
 
 .paneTitle {
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 600;
 }
 
 .textareaEditor {
   flex-grow: 1;
   padding: 16px;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-family: monospace;
   border: none;
   border-radius: 0;
@@ -120,7 +112,7 @@ body {
   align-items: center;
   gap: 8px;
   padding: 32px;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 600;
   border-radius: 8px;
   background-color: var(--background);
@@ -150,12 +142,13 @@ body {
   .header,
   .editorPane,
   .dropzoneOverlay,
-  .paneHeader {
+  .paneHeader,
+  .resizeHandle {
     display: none;
   }
 
   .mainContent {
-    grid-template-columns: 1fr;
+    display: block;
     height: auto;
     flex-grow: 0;
     overflow: visible;
@@ -166,4 +159,18 @@ body {
     height: auto;
     overflow: visible;
   }
+}
+
+.resizeHandle {
+  width: 1px;
+  background-color: #eee;
+  transition: background-color 0.2s, width 0.2s;
+  position: relative;
+  z-index: 1;
+}
+
+.resizeHandle:hover {
+  width: 5px;
+  background-color: #ccc;
+  cursor: ew-resize;
 }
