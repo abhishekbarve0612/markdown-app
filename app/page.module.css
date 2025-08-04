@@ -58,6 +58,9 @@ body {
   padding: 16px;
   border-bottom: 1px solid var(--border);
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .paneTitle {
@@ -125,6 +128,25 @@ body {
   color: var(--primary);
 }
 
+.resizeHandle {
+  width: 1px;
+  background-color: #eee;
+  transition: background-color 0.2s, width 0.2s;
+  position: relative;
+  z-index: 1;
+}
+
+.resizeHandle:hover {
+  width: 5px;
+  background-color: #ccc;
+  cursor: ew-resize;
+}
+
+.fontSizeControls {
+  display: flex;
+  gap: 4px;
+}
+
 /* Print Styles */
 @media print {
   html,
@@ -143,7 +165,8 @@ body {
   .editorPane,
   .dropzoneOverlay,
   .paneHeader,
-  .resizeHandle {
+  .resizeHandle,
+  .fontSizeControls {
     display: none;
   }
 
@@ -159,18 +182,4 @@ body {
     height: auto;
     overflow: visible;
   }
-}
-
-.resizeHandle {
-  width: 1px;
-  background-color: #eee;
-  transition: background-color 0.2s, width 0.2s;
-  position: relative;
-  z-index: 1;
-}
-
-.resizeHandle:hover {
-  width: 5px;
-  background-color: #ccc;
-  cursor: ew-resize;
 }

@@ -11,9 +11,12 @@ import Textarea from "@/components/textarea";
 import Preview from "@/components/markdown/Preview";
 import { ThemeToggle } from "@/components/dark-mode";
 import { Panel, PanelGroup, PanelResizeHandle } from "react-resizable-panels";
+import { FaMinus, FaPlus } from "react-icons/fa6";
+import { RiResetRightFill } from "react-icons/ri";
 
 export default function Home() {
   const [markdown, setMarkdown] = useState(defaultMarkdown);
+  const [previewFontSize, setPreviewFontSize] = useState(100);
 
   const onDrop = useCallback((acceptedFiles: File[]) => {
     const file = acceptedFiles[0];
@@ -37,6 +40,18 @@ export default function Home() {
       "text/markdown": [".md", ".markdown"],
     },
   });
+
+  const increaseFontSize = () => {
+    setPreviewFontSize((prev) => Math.min(prev + 10, 200));
+  };
+
+  const decreaseFontSize = () => {
+    setPreviewFontSize((prev) => Math.max(prev - 10, 50));
+  };
+
+  const resetFontSize = () => {
+    setPreviewFontSize(100);
+  };
 
   return (
     <div className={styles.container}>
@@ -100,8 +115,34 @@ export default function Home() {
           <Panel className={`${styles.previewPane}`}>
             <div className={`${styles.paneHeader}`}>
               <h2 className={styles.paneTitle}>Preview</h2>
+              <div className={styles.fontSizeControls}>
+                <Button
+                  className={`${styles.button} ${styles.buttonIconOnly}`}
+                  onClick={decreaseFontSize}
+                  disabled={previewFontSize <= 50}
+                >
+                  <FaMinus style={{ width: "12px", height: "12px" }} />
+                  <span className="sr-only">Decrease font size</span>
+                </Button>
+                <Button
+                  className={`${styles.button} ${styles.buttonIconOnly}`}
+                  onClick={resetFontSize}
+                  disabled={previewFontSize === 100}
+                >
+                  <RiResetRightFill style={{ width: "12px", height: "12px" }} />
+                  <span className="sr-only">Reset font size</span>
+                </Button>
+                <Button
+                  className={`${styles.button} ${styles.buttonIconOnly}`}
+                  onClick={increaseFontSize}
+                  disabled={previewFontSize >= 200}
+                >
+                  <FaPlus style={{ width: "12px", height: "12px" }} />
+                  <span className="sr-only">Increase font size</span>
+                </Button>
+              </div>
             </div>
-            <Preview markdown={markdown} />
+            <Preview markdown={markdown} fontSize={previewFontSize} />
           </Panel>
         </PanelGroup>
       </main>

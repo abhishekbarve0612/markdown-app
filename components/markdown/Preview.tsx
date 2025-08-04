@@ -4,11 +4,15 @@ import styles from "./preview.module.css";
 
 interface PreviewProps {
   markdown: string;
+  fontSize: number;
 }
 
-const Preview = ({ markdown }: PreviewProps) => {
+const Preview = ({ markdown, fontSize }: PreviewProps) => {
   return (
-    <div className={styles.markdownPreview}>
+    <div
+      className={styles.markdownPreview}
+      style={{ fontSize: `${fontSize}%` } as React.CSSProperties}
+    >
       <article>
         <ReactMarkdown remarkPlugins={[remarkGfm]}>{markdown}</ReactMarkdown>
       </article>
