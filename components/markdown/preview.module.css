@@ -1,0 +1,135 @@
+.markdownPreview {
+  flex-grow: 1;
+  padding: 16px;
+  overflow-y: auto;
+}
+
+.markdownPreview h1 {
+  font-size: 2.5em;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  font-weight: 700;
+}
+.markdownPreview h2 {
+  font-size: 2em;
+  margin-top: 1.2em;
+  margin-bottom: 0.4em;
+  font-weight: 600;
+}
+.markdownPreview h3 {
+  font-size: 1.75em;
+  margin-top: 1em;
+  margin-bottom: 0.3em;
+  font-weight: 600;
+}
+.markdownPreview h4 {
+  font-size: 1.5em;
+  margin-top: 0.8em;
+  margin-bottom: 0.2em;
+  font-weight: 600;
+}
+.markdownPreview h5 {
+  font-size: 1.25em;
+  margin-top: 0.6em;
+  margin-bottom: 0.1em;
+  font-weight: 600;
+}
+.markdownPreview h6 {
+  font-size: 1em;
+  margin-top: 0.5em;
+  margin-bottom: 0.1em;
+  font-weight: 600;
+}
+
+.markdownPreview p {
+  margin-bottom: 1em;
+}
+
+.markdownPreview ul,
+.markdownPreview ol {
+  margin-bottom: 1em;
+  padding-left: 20px;
+}
+
+.markdownPreview li {
+  margin-bottom: 0.5em;
+}
+
+.markdownPreview pre {
+  background-color: #f4f4f4;
+  padding: 1em;
+  border-radius: 4px;
+  overflow-x: auto;
+  margin-bottom: 1em;
+}
+
+.markdownPreview code {
+  font-family: monospace;
+  background-color: #f4f4f4;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+}
+
+.markdownPreview pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+.markdownPreview blockquote {
+  border-left: 4px solid #ccc;
+  padding-left: 1em;
+  color: #666;
+  margin-bottom: 1em;
+}
+
+.markdownPreview table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1em;
+}
+
+.markdownPreview th,
+.markdownPreview td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.markdownPreview th {
+  background-color: #f2f2f2;
+}
+
+.markdownPreview img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1em 0;
+}
+
+.markdownPreview hr {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 2em 0;
+}
+
+@media print {
+  .markdownPreview {
+    height: auto;
+    overflow: visible;
+    padding: 0;
+  }
+
+  .markdownPreview h1,
+  .markdownPreview h2,
+  .markdownPreview h3,
+  .markdownPreview h4,
+  .markdownPreview h5,
+  .markdownPreview h6,
+  .markdownPreview p,
+  .markdownPreview li,
+  .markdownPreview blockquote,
+  .markdownPreview table,
+  .markdownPreview code {
+    color: #000;
+  }
+}
