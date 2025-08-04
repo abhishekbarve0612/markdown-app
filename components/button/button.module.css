@@ -9,13 +9,14 @@
   cursor: pointer;
   transition: background-color 0.2s, border-color 0.2s, color 0.2s;
   border: 1px solid #ccc;
-  background-color: #fff;
-  color: #333;
+  background-color: var(--background);
+  color: var(--foreground);
   text-decoration: none;
 }
 
 .button:hover {
-  background-color: #f0f0f0;
+  background-color: var(--foreground);
+  color: var(--background);
 }
 
 .buttonIconOnly {
