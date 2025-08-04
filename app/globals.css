@@ -1,13 +1,23 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(210, 10%, 20%);
+
+  --primary: hsl(66, 100%, 96%);
+  --primary-dark: hsl(0, 0%, 36%);
+
+  --secondary: hsl(210, 100%, 96%);
+  --secondary-dark: hsl(210, 3%, 13%);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root body.dark {
+  --background: hsl(210, 3%, 13%);
+  --foreground: hsl(210, 10%, 96%);
+
+  --primary: hsl(0, 0%, 36%);
+  --primary-dark: hsl(66, 100%, 96%);
+
+  --secondary: hsl(210, 3%, 13%);
+  --secondary-dark: hsl(210, 10%, 96%);
 }
 
 html,
@@ -35,8 +45,17 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+* {
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
 }

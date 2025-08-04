@@ -9,6 +9,7 @@ import { useCallback, useState } from "react";
 import { defaultMarkdown } from "@/utils/constants";
 import Textarea from "@/components/textarea";
 import Preview from "@/components/markdown/Preview";
+import { ThemeToggle } from "@/components/dark-mode";
 
 export default function Home() {
   const [markdown, setMarkdown] = useState(defaultMarkdown);
@@ -59,6 +60,7 @@ export default function Home() {
             <BiPrinter style={{ width: "16px", height: "16px" }} />
             <span className="sr-only">Print</span>
           </Button>
+          <ThemeToggle />
         </div>
       </header>
 

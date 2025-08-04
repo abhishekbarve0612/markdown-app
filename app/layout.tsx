@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { DarkModeProvider, ThemeScript } from "@/components/dark-mode";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,8 +25,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <ThemeScript />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+        <DarkModeProvider>{children}</DarkModeProvider>
       </body>
     </html>
   );
