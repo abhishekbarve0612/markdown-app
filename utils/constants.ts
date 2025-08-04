@@ -36,5 +36,5 @@ console.log(greet('World'));
 
 ### Image Example
 
-![Vercel Logo](https://assets.vercel.com/image/upload/v1588805858/repositories/vercel/logo.png)
+![Placeholder Image](https://placehold.co/600x400)
 `;
