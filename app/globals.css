@@ -59,3 +59,10 @@ a {
 * {
   transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
 }
+
+@media print {
+  html,
+  body {
+    overflow: visible;
+  }
+}

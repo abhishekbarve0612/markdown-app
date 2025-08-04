@@ -136,11 +136,6 @@
 
 /* Print Styles */
 @media print {
-  html,
-  body {
-    overflow: visible;
-  }
-
   .appContainer {
     min-height: auto;
     height: auto;
