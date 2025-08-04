@@ -56,7 +56,7 @@
 }
 
 .markdownPreview pre {
-  background-color: #f4f4f4;
+  background-color: var(--foreground);
   padding: 1em;
   border-radius: 4px;
   overflow-x: auto;
@@ -65,18 +65,19 @@
 
 .markdownPreview code {
   font-family: monospace;
-  background-color: #f4f4f4;
+  color: var(--background);
   padding: 0.2em 0.4em;
   border-radius: 3px;
 }
 
 .markdownPreview pre code {
   background-color: transparent;
+  color: var(--background);
   padding: 0;
 }
 
 .markdownPreview blockquote {
-  border-left: 4px solid #ccc;
+  border-left: 4px solid var(--foreground);
   padding-left: 1em;
   color: #666;
   margin-bottom: 1em;
@@ -90,13 +91,13 @@
 
 .markdownPreview th,
 .markdownPreview td {
-  border: 1px solid #ddd;
+  border: 1px solid var(--foreground);
   padding: 8px;
   text-align: left;
 }
 
 .markdownPreview th {
-  background-color: #f2f2f2;
+  background-color: var(--background);
 }
 
 .markdownPreview img {
@@ -108,7 +109,7 @@
 
 .markdownPreview hr {
   border: none;
-  border-top: 1px solid #eee;
+  border-top: 1px solid var(--foreground);
   margin: 2em 0;
 }
 
@@ -130,6 +131,6 @@
   .markdownPreview blockquote,
   .markdownPreview table,
   .markdownPreview code {
-    color: #000;
+    color: var(--foreground);
   }
 }
