@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="256" height="256"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" aria-labelledby="title desc" role="img">
+  <title id="SvgjsTitle1003">Markdown Renderer Logo</title>
+  <desc id="SvgjsDesc1002">Rounded square with a stylized letter M and a downward arrow.</desc>
+  <defs>
+    <style>
+      :root {
+        --mdk-bg: hsl(0, 0%, 36%);
+        --mdk-fg: hsl(66, 100%, 96%);
+      }
+    </style>
+  </defs>
+
+  <rect x="8" y="8" width="240" height="240" rx="56" ry="56" fill="var(--mdk-bg)"></rect>
+
+  <g fill="var(--mdk-fg)">
+    <rect x="56" y="74" width="28" height="110" rx="6"></rect>
+    <rect x="144" y="74" width="28" height="110" rx="6"></rect>
+    <polygon points="84,92 112,140 140,92 140,114 112,156 84,114"></polygon>
+  </g>
+
+  <g fill="var(--mdk-fg)">
+    <rect x="192" y="74" width="16" height="70" rx="6"></rect>
+    <polygon points="200,182 176,154 224,154"></polygon>
+  </g>
+</svg><style>@media (prefers-color-scheme: light) { :root { filter: none; } }
+@media (prefers-color-scheme: dark) { :root { filter: none; } }
+</style></svg>
